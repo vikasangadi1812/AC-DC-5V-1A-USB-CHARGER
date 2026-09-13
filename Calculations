@@ -1,0 +1,136 @@
+Transformer Secondary Voltage
+
+Given:
+
+Primary voltage = 230 V RMS
+Frequency = 50 Hz
+Secondary voltage = 9 V RMS
+
+Peak secondary voltage:
+
+Vsecondary(peak) = Vsecondary(rms) × √2
+
+Vsecondary(peak) = 9 × 1.414
+
+Vsecondary(peak) = 12.73 V
+2. Bridge Rectifier Output Voltage
+
+For a full-wave bridge rectifier, two diodes conduct during each half cycle.
+
+Assuming:
+
+Diode forward voltage = 0.7 V
+
+Total diode voltage drop:
+
+Vdrop = 2 × 0.7
+      = 1.4 V
+
+Peak rectified voltage:
+
+Vrectified = 12.73 − 1.4
+
+Vrectified = 11.33 V
+
+3. Ripple Voltage
+
+Given:
+
+C = 470 µF
+I = 1 A
+f = 50 Hz
+
+For full-wave rectification:
+
+fr = 2f
+   = 2 × 50
+   = 100 Hz
+
+Ripple voltage:
+
+Vr = I / (fr × C)
+
+Vr = 1 / (100 × 470 × 10⁻⁶)
+
+Vr ≈ 21.3 V
+
+The report notes that practical load current is much lower than the maximum value and that the regulator further reduces ripple.
+
+4. 7805 Input Voltage Requirement
+
+Minimum input voltage required by the 7805:
+
+Vin(min) ≈ 7 V
+
+Available DC input:
+
+Vin ≈ 11.33 V
+
+Therefore:
+
+Vin > Vin(min)
+
+11.33 V > 7 V
+
+So, according to the report, the 7805 operates in its regulation region.
+
+5. Regulated Output Voltage
+
+The 7805 provides:
+
+Vreg = 5 V DC
+
+6. Current-Limiting Resistor
+
+Given:
+
+R = 2.2 Ω
+Imax = 1 A
+
+Voltage drop:
+
+VR = Imax × R
+
+VR = 1 × 2.2
+
+VR = 2.2 V
+
+Power dissipated:
+
+P = I² × R
+
+P = 1² × 2.2
+
+P = 2.2 W
+
+Therefore, the report selects a resistor with a power rating of at least 3 W.
+
+7. Diode Voltage Drop
+
+Assuming:
+
+VD ≈ 0.7 V
+
+The output diode provides reverse-polarity protection.
+
+8. Final Output
+
+The report gives:
+
+Vout = 5 − 0.7
+
+and notes that under normal operating conditions the resistor drop is much smaller, so the practical output remains close to 5 V DC.
+
+📊 Final Summary
+Parameter	Value
+AC Input	230 V RMS
+Frequency	50 Hz
+Transformer Output	9 V RMS
+Peak Secondary Voltage	12.73 V
+Rectified Peak Voltage	11.33 V
+Regulator	7805
+Regulated Output	5 V DC
+Maximum Current	1 A
+Current-Limiting Resistor	2.2 Ω
+Resistor Power Rating	≥ 3 W
+Protection Diode Drop	≈ 0.7 V
